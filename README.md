@@ -1,4 +1,4 @@
-[JengaVr desciption](https://docs.google.com/document/d/1HR-kDvZ59JA7W4SYCu94JlNGo84FRprv/edit?usp=sharing&ouid=116015114327195194122&rtpof=true&sd=true)
+[JengaVr description](https://docs.google.com/document/d/1HR-kDvZ59JA7W4SYCu94JlNGo84FRprv/edit?usp=sharing&ouid=116015114327195194122&rtpof=true&sd=true)
 
 [Componenets and resources](https://docs.google.com/document/d/1kaqhu3aIpdOr1ICXIa9iUcgJhaFpyhpJRjKMX7lMdaE/edit?fbclid=IwAR3asAp0zd5--bE-94rFG33YwZihNDKLGeZP2wYXJkkwSiCzpqZxtwQrr0A#)
 
