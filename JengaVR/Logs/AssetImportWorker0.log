@@ -16,6 +16,7 @@ C:/Users/ursua/Documents/GitHub/MixedRealityProject/JengaVR
 Logs/AssetImportWorker0.log
 -srvPort
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 51881
 Successfully changed project path to: D:/MixedRealityProject/JengaVR
 D:/MixedRealityProject/JengaVR
@@ -27,6 +28,8 @@ Initialize engine version: 2020.3.20f1 (41c4e627c95f)
 [Subsystems] Discovering subsystems at path D:/MixedRealityProject/JengaVR/Assets
 GfxDevice: creating device client; threaded=0
 =======
+=======
+>>>>>>> Stashed changes
 52523
 Successfully changed project path to: C:/Users/ursua/Documents/GitHub/MixedRealityProject/JengaVR
 C:/Users/ursua/Documents/GitHub/MixedRealityProject/JengaVR
@@ -65,6 +68,9 @@ Initialize engine version: 2021.2.2f1 (5e2b1e92c7f8)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity 2021.2.2f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/ursua/Documents/GitHub/MixedRealityProject/JengaVR/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -73,6 +79,7 @@ Direct3D:
     VRAM:     4026 MB
     Driver:   20.19.15.4474
 Initialize mono
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
@@ -90,6 +97,24 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (1709ms)
 		BeginReloadAssembly (80ms)
+=======
+Mono path[0] = 'C:/Program Files/Unity 2021.2.2f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 2021.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity 2021.2.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56464
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 2021.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.014767 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 207.35 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.20 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.280 seconds
+Domain Reload Profiling:
+	ReloadAssembly (5283ms)
+		BeginReloadAssembly (244ms)
+>>>>>>> Stashed changes
 =======
 Mono path[0] = 'C:/Program Files/Unity 2021.2.2f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity 2021.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
@@ -144,6 +169,9 @@ Domain Reload Profiling:
 				BeforeProcessingInitializeOnLoad (4ms)
 				ProcessInitializeOnLoadAttributes (1753ms)
 				ProcessInitializeOnLoadMethodAttributes (277ms)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (1ms)
@@ -151,6 +179,7 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 Registered in 0.011855 seconds.
 Begin MonoManager ReloadAssembly
@@ -161,6 +190,14 @@ Preloading 2 native plugins for Editor in 0.13 ms.
 [XR] Unable to register display lifecyle provider: [1]
 [XR] Oculus Input lifecycle provider registered.
 [XR] Unable to register input lifecyle provider: [1]
+=======
+Registered in 0.067200 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 83.73 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.19 ms.
+Package Manager log level set to [2]
+>>>>>>> Stashed changes
 =======
 Registered in 0.067200 seconds.
 Begin MonoManager ReloadAssembly
@@ -186,6 +223,7 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
 
 Mono: successfully reloaded assembly
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 - Completed reload, in  2.207 seconds
 Domain Reload Profiling:
 	ReloadAssembly (2209ms)
@@ -208,6 +246,13 @@ Domain Reload Profiling:
 	ReloadAssembly (3493ms)
 		BeginReloadAssembly (473ms)
 			ExecutionOrderSort (0ms)
+=======
+- Completed reload, in  3.491 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3493ms)
+		BeginReloadAssembly (473ms)
+			ExecutionOrderSort (0ms)
+>>>>>>> Stashed changes
 			DisableScriptedObjects (12ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
@@ -219,6 +264,7 @@ Domain Reload Profiling:
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (121ms)
 			SetupLoadedEditorAssemblies (1560ms)
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (29ms)
@@ -231,6 +277,11 @@ Domain Reload Profiling:
 				AfterProcessingInitializeOnLoad (13ms)
 				EditorAssembliesLoaded (0ms)
 =======
+=======
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (29ms)
+				SetLoadedEditorAssemblies (0ms)
+>>>>>>> Stashed changes
 				RefreshPlugins (84ms)
 				BeforeProcessingInitializeOnLoad (170ms)
 				ProcessInitializeOnLoadAttributes (1187ms)
@@ -339,6 +390,7 @@ Domain Reload Profiling:
 				ProcessInitializeOnLoadMethodAttributes (105ms)
 				AfterProcessingInitializeOnLoad (119ms)
 				EditorAssembliesLoaded (1ms)
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (24ms)
@@ -356,6 +408,11 @@ System memory in use after: 100.6 MB.
 Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2858.
 Total: 4.769200 ms (FindLiveObjects: 0.369000 ms CreateObjectMapping: 0.092700 ms MarkObjects: 4.164200 ms  DeleteObjects: 0.141400 ms)
 =======
+=======
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (24ms)
+Platform modules already initialized, skipping
+>>>>>>> Stashed changes
 Refreshing native plugins compatible for Editor in 46.75 ms, found 11 plugins.
 Preloading 1 native plugins for Editor in 0.39 ms.
 Unloading 2299 Unused Serialized files (Serialized files now loaded: 0)
@@ -798,6 +855,9 @@ Unloading 2309 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 34 unused Assets / (25.3 KB). Loaded Objects now: 3628.
 Memory consumption went from 165.9 MB to 165.8 MB.
 Total: 18.961000 ms (FindLiveObjects: 0.892700 ms CreateObjectMapping: 0.619200 ms MarkObjects: 17.170000 ms  DeleteObjects: 0.267200 ms)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -811,6 +871,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
@@ -821,6 +882,8 @@ Start importing Assets/GameScene.unity using Guid(f90ee66ed0687ce4f95abef2ec7fb9
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
 =======
+=======
+>>>>>>> Stashed changes
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
@@ -890,4 +953,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
