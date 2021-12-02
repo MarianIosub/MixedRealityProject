@@ -19,7 +19,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private string room = "VRMeetup";
     private string gameVersion = "0.1";
 
-    private bool m_createdRoom = false; 
+    private bool m_createdRoom = false;
 
     private void Awake()
     {
@@ -33,7 +33,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             OnConnectedToMaster();
         }
-        else {         
+        else
+        {
             PhotonNetwork.ConnectUsingSettings();
             PhotonNetwork.GameVersion = gameVersion;
         }
@@ -46,17 +47,17 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         base.OnConnectedToMaster();
         Debug.Log("Connected to master!");
         Debug.Log("Joining room...");
-        
+
         PhotonNetwork.JoinRandomRoom();
         // PhotonNetwork.JoinRoom(room);
-        
+
     }
 
     public override void OnDisconnected(DisconnectCause cause)
     {
         Debug.LogWarningFormat("Disconnected with reason {0}", cause);
     }
-    
+
 
     public override void OnJoinedRoom()
     {
@@ -87,7 +88,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         base.OnRoomListUpdate(roomList);
         Debug.Log("Got " + roomList.Count + " rooms.");
-        foreach(RoomInfo room in roomList)
+        foreach (RoomInfo room in roomList)
         {
             Debug.Log("Room: " + room.Name + ", " + room.PlayerCount);
         }
@@ -101,17 +102,17 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     #endregion
     #region ROOM_PROPS
 
-    public override void OnPlayerEnteredRoom(Player newPlayer)
-    {
-        OnPlayersChanged?.Invoke();
-    }
+    // public override void OnPlayerEnteredRoom(Player newPlayer)
+    // {
+    //     OnPlayersChanged?.Invoke();
+    // }
 
-    public override void OnPlayerLeftRoom(Player otherPlayer)
-    {
-        base.OnPlayerLeftRoom(otherPlayer);
-        OnPlayersChanged?.Invoke();
+    // public override void OnPlayerLeftRoom(Player otherPlayer)
+    // {
+    //     base.OnPlayerLeftRoom(otherPlayer);
+    //     OnPlayersChanged?.Invoke();
 
-    }
+    // }
     public static bool SetCustomPropertySafe(string key, object newValue, WebFlags webFlags = null)
     {
         Room room = PhotonNetwork.CurrentRoom;
@@ -138,7 +139,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public static object GetCurrentRoomCustomProperty(string key)
     {
         Room room = PhotonNetwork.CurrentRoom;
-        if(room == null || room.IsOffline || !room.CustomProperties.ContainsKey(key))
+        if (room == null || room.IsOffline || !room.CustomProperties.ContainsKey(key))
         {
             return null;
         }

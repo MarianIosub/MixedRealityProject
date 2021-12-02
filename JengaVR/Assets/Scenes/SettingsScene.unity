@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 369089283}
   - component: {fileID: 369089282}
   - component: {fileID: 369089281}
+  - component: {fileID: 369089284}
   m_Layer: 5
   m_Name: RightBotDropdown
   m_TagString: Untagged
@@ -536,6 +537,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369089279}
   m_CullTransparentMesh: 1
+--- !u!114 &369089284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369089279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf300a274ef8d845a1b4e9bff61e450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 369089281}
 --- !u!1 &406088546
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +842,7 @@ GameObject:
   - component: {fileID: 530665876}
   - component: {fileID: 530665875}
   - component: {fileID: 530665874}
+  - component: {fileID: 530665877}
   m_Layer: 5
   m_Name: LeftTopDropdown
   m_TagString: Untagged
@@ -956,6 +971,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530665872}
   m_CullTransparentMesh: 1
+--- !u!114 &530665877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530665872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf300a274ef8d845a1b4e9bff61e450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 530665874}
 --- !u!1 &637865068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1113,7 @@ GameObject:
   - component: {fileID: 789685502}
   - component: {fileID: 789685501}
   - component: {fileID: 789685500}
+  - component: {fileID: 789685503}
   m_Layer: 5
   m_Name: RightTopDropdown
   m_TagString: Untagged
@@ -1213,6 +1242,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789685498}
   m_CullTransparentMesh: 1
+--- !u!114 &789685503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789685498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf300a274ef8d845a1b4e9bff61e450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 789685500}
 --- !u!1 &799136119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,6 +1343,7 @@ GameObject:
   - component: {fileID: 820603107}
   - component: {fileID: 820603106}
   - component: {fileID: 820603105}
+  - component: {fileID: 820603108}
   m_Layer: 5
   m_Name: LeftBotDropdown
   m_TagString: Untagged
@@ -1429,6 +1472,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820603103}
   m_CullTransparentMesh: 1
+--- !u!114 &820603108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820603103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf300a274ef8d845a1b4e9bff61e450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 820603105}
 --- !u!1 &821404459
 GameObject:
   m_ObjectHideFlags: 0
@@ -4338,6 +4394,7 @@ GameObject:
   - component: {fileID: 1559693433}
   - component: {fileID: 1559693432}
   - component: {fileID: 1559693431}
+  - component: {fileID: 1559693434}
   m_Layer: 5
   m_Name: SaveButton
   m_TagString: Untagged
@@ -4423,6 +4480,18 @@ MonoBehaviour:
           m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1559693434}
+        m_TargetAssemblyTypeName: SaveData, Assembly-CSharp
+        m_MethodName: SaveIntoJson
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1559693432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4461,6 +4530,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559693429}
   m_CullTransparentMesh: 1
+--- !u!114 &1559693434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559693429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e51e46c891c61a49bafde3f2c18ebd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PotionData:
+    pieceTexture: 
+    handColor: 
+    music: 
+    pieseSelected: 
 --- !u!1 &1573555687
 GameObject:
   m_ObjectHideFlags: 0
