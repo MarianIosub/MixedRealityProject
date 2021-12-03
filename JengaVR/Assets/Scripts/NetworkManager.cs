@@ -16,7 +16,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public static event Action OnExistingRoomJoined;
     public static event Action OnPlayersChanged;
 
-    private string room = "VRMeetup";
+    private string room = "JengaVR";
     private string gameVersion = "0.1";
 
     private bool m_createdRoom = false;
@@ -28,7 +28,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
-
         if (PhotonNetwork.IsConnected)
         {
             OnConnectedToMaster();
@@ -41,16 +40,17 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         Debug.Log("Connecting...");
     }
+
     #region CONNECTION
+
     public override void OnConnectedToMaster()
     {
         base.OnConnectedToMaster();
         Debug.Log("Connected to master!");
         Debug.Log("Joining room...");
 
-        PhotonNetwork.JoinRandomRoom();
-        // PhotonNetwork.JoinRoom(room);
-
+        // PhotonNetwork.JoinRandomRoom();
+        PhotonNetwork.JoinRoom(room);
     }
 
     public override void OnDisconnected(DisconnectCause cause)
@@ -81,7 +81,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.LogWarning("Room join failed " + message);
         m_createdRoom = true;
         Debug.Log("Creating room...");
-        PhotonNetwork.CreateRoom(room, new RoomOptions { MaxPlayers = 8, IsOpen = true, IsVisible = true }, TypedLobby.Default);
+        PhotonNetwork.CreateRoom(room, new RoomOptions {MaxPlayers = 8, IsOpen = true, IsVisible = true},
+            TypedLobby.Default);
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
@@ -96,23 +97,28 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public void CreatePlayer()
     {
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "LeftHand"), Vector3.zero, Quaternion.identity, 0);
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "RightHand"), Vector3.zero, Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("Assets", "Photon", "PhotonUnityNetworking", "Resources", "RightHand"),
+            Vector3.zero, Quaternion.identity, 0);
+
+        PhotonNetwork.Instantiate(Path.Combine("Assets", "Photon", "PhotonUnityNetworking", "Resources", "LeftHand"),
+            Vector3.zero, Quaternion.identity, 0);
     }
+
     #endregion
+
     #region ROOM_PROPS
 
-    // public override void OnPlayerEnteredRoom(Player newPlayer)
-    // {
-    //     OnPlayersChanged?.Invoke();
-    // }
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        OnPlayersChanged?.Invoke();
+    }
 
-    // public override void OnPlayerLeftRoom(Player otherPlayer)
-    // {
-    //     base.OnPlayerLeftRoom(otherPlayer);
-    //     OnPlayersChanged?.Invoke();
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        base.OnPlayerLeftRoom(otherPlayer);
+        OnPlayersChanged?.Invoke();
 
-    // }
+    }
     public static bool SetCustomPropertySafe(string key, object newValue, WebFlags webFlags = null)
     {
         Room room = PhotonNetwork.CurrentRoom;
@@ -131,9 +137,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             props.Add(key, newValue);
         }
+
         //ExitGames.Client.Photon.Hashtable newProps = new ExitGames.Client.Photon.Hashtable(1) { { key, newValue } };
         //Hashtable oldProps = new Hashtable(1) { { key, room.CustomProperties[key] } };
-        return room.LoadBalancingClient.OpSetCustomPropertiesOfRoom(props/*, oldProps, webFlags);*/);
+        return room.LoadBalancingClient.OpSetCustomPropertiesOfRoom(props /*, oldProps, webFlags);*/);
     }
 
     public static object GetCurrentRoomCustomProperty(string key)
@@ -153,5 +160,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         RoomPropsChanged?.Invoke(propertiesThatChanged);
     }
+
     #endregion
 }
