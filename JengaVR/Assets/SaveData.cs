@@ -1,10 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 using System.IO;
-using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class SaveData : MonoBehaviour
 {
@@ -22,7 +19,7 @@ public class SaveData : MonoBehaviour
         settings.Add("handColor=" + handColorDropdown.value);
         settings.Add("music=" + musicDropdown.value);
 
-        File.WriteAllLinesAsync("settings.txt", settings);
+        File.WriteAllLinesAsync("Assets/Settings/settings.txt", settings);
     }
 }
 

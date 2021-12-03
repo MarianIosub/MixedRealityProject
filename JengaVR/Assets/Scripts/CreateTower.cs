@@ -1,25 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 
 public class CreateTower : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform towerPrefab;
-    public Material material1, material2, material3;
+    public Material oakMaterial, pineMaterial, mahagonyMaterial;
 
     void Start()
     {
         var tower = Instantiate(towerPrefab, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
-        Debug.Log("Applied Material: " + material1.name);
-        // Get the current material applied on the GameObject
+
         for (int i = 0; i < 54; i++)
         {
-            MeshRenderer meshRenderer = tower.GetChild(i).GetComponent<MeshRenderer>();
-            Material oldMaterial = meshRenderer.material;
-            Debug.Log("Applied Material: " + oldMaterial.name);
-            // Set the new material on the GameObject
-            meshRenderer.material = material1;
+            var settings = File.ReadLines("Assets/Settings/settings.txt");
+            switch (settings.ElementAt(1).Split("=")[1])
+            {
+                case "0":
+                    tower.GetChild(i).GetComponent<MeshRenderer>().material = oakMaterial;
+                    break;
+                case "1":
+                    tower.GetChild(i).GetComponent<MeshRenderer>().material = pineMaterial;
+                    break;
+                case "2":
+                    tower.GetChild(i).GetComponent<MeshRenderer>().material = mahagonyMaterial;
+                    break;
+            }
         }
     }
 
