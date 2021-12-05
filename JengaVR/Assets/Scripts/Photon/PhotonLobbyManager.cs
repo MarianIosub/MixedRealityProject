@@ -4,6 +4,7 @@ using System.Threading;
 using UnityEngine;
 using Photon.Realtime;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class PhotonLobbyManager : MonoBehaviourPunCallbacks
 {
@@ -71,7 +72,7 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
         ClearNicknames();
         DisplayPlayersNicknames();
 
-        if (player.IsMasterClient)
+        /*if (player.IsMasterClient)
         {
             var players = PhotonNetwork.PlayerList;
             int numberOfPlayers = 0;
@@ -87,6 +88,17 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
 
             Debug.Log(numberOfPlayers);
             Debug.Log(players[0]);
-        }
+        }*/
+    }
+
+    public void LeaveJengaRoom()
+    {
+        PhotonNetwork.LeaveRoom();
+        MoveToScene("ChooseLobbyScene");
+    }
+
+    private void MoveToScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
