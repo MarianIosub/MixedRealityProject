@@ -68,7 +68,7 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerLeftRoom(Player player)
     {
-        if (player != PhotonNetwork.LocalPlayer)
+        if (player.NickName != PhotonNetwork.LocalPlayer.NickName)
         {
             Debug.LogFormat("Player {0} left the room", player.ToString());
             ClearNicknames();
