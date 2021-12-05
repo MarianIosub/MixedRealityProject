@@ -68,27 +68,12 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerLeftRoom(Player player)
     {
-        Debug.LogFormat("Player {0} left the room", player.ToString());
-        ClearNicknames();
-        DisplayPlayersNicknames();
-
-        /*if (player.IsMasterClient)
+        if (player != PhotonNetwork.LocalPlayer)
         {
-            var players = PhotonNetwork.PlayerList;
-            int numberOfPlayers = 0;
-            foreach(Player dummy in players)
-            {
-                numberOfPlayers++;
-            }
-
-            if(numberOfPlayers > 0)
-            {
-                PhotonNetwork.SetMasterClient(players[0]);
-            }
-
-            Debug.Log(numberOfPlayers);
-            Debug.Log(players[0]);
-        }*/
+            Debug.LogFormat("Player {0} left the room", player.ToString());
+            ClearNicknames();
+            DisplayPlayersNicknames();
+        }
     }
 
     public void LeaveJengaRoom()
