@@ -6,6 +6,7 @@ using Photon.Pun;
 
 public class PhotonConnector : MonoBehaviourPunCallbacks
 {
+    /*
     #region Private Serializable Fields
 
 
@@ -109,4 +110,26 @@ public class PhotonConnector : MonoBehaviourPunCallbacks
 
 
     #endregion
+    */
+
+    string gameVersion = "1";
+
+    void Awake()
+    {
+        PhotonNetwork.AutomaticallySyncScene = true;
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+        Connect();
+    }
+
+
+    public void Connect()
+    {
+        PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.GameVersion = gameVersion;
+    }
 }
