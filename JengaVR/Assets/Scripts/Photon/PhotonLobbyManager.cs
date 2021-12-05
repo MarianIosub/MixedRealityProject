@@ -12,22 +12,29 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
     public GameObject Player3Object;
     public GameObject Player4Object;
 
-    void Start()
+    private void ClearNicknames()
     {
         Player1Object.GetComponent<UnityEngine.UI.Text>().text = "-";
         Player2Object.GetComponent<UnityEngine.UI.Text>().text = "-";
         Player3Object.GetComponent<UnityEngine.UI.Text>().text = "-";
-        Player4Object.GetComponent<UnityEngine.UI.Text>().text = "-"; 
+        Player4Object.GetComponent<UnityEngine.UI.Text>().text = "-";
+    }
+
+    void Start()
+    {
+        ClearNicknames();
     }
 
     public override void OnJoinedRoom()
     {
+        ClearNicknames();
         DisplayPlayersNicknames();
     }
 
     public override void OnPlayerEnteredRoom(Player player)
     {
         Debug.LogFormat("Player {0} joined the room", player.ToString());
+        ClearNicknames();
         DisplayPlayersNicknames();
     }
 
@@ -58,10 +65,12 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
         }
     }
 
-    // OnDisconectedRoom -- display + check if playerlist.length > 0; if master, change lobby master
     public override void OnPlayerLeftRoom(Player player)
     {
         Debug.LogFormat("Player {0} left the room", player.ToString());
+        ClearNicknames();
+        DisplayPlayersNicknames();
+
         if (player.IsMasterClient)
         {
             var players = PhotonNetwork.PlayerList;
@@ -75,6 +84,9 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
             {
                 PhotonNetwork.SetMasterClient(players[0]);
             }
+
+            Debug.Log(numberOfPlayers);
+            Debug.Log(players[0]);
         }
     }
 }
