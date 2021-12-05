@@ -15,11 +15,25 @@ public class PhotonLobbyJoiner : MonoBehaviourPunCallbacks
         Debug.LogFormat("Am lobby code-ul {0}", LobbyCode);
     }
 
+    private string GenerateRoomCode()
+    {
+        string chars = "0123456789";
+        var random = new System.Random();
+        string code = "";
+
+        for (int i = 0; i < 6; i++)
+        {
+            char ch = chars[random.Next(10)];
+            code += ch;
+        }
+
+        return code;
+    }
+
     public void JoinJengaRoom()
     {
         if(LobbyCode.Length == 0)
         {
-            // Event handler
             PhotonNetwork.JoinRandomRoom();
         }
         else
@@ -38,8 +52,7 @@ public class PhotonLobbyJoiner : MonoBehaviourPunCallbacks
     {
         Debug.Log("Join room a esuat.");
 
-        // Random generated digits code + display
-        PhotonNetwork.CreateRoom("testroom2", new RoomOptions()
+        PhotonNetwork.CreateRoom(GenerateRoomCode(), new RoomOptions()
         {
             MaxPlayers = 4,
             IsVisible = true,
@@ -53,8 +66,7 @@ public class PhotonLobbyJoiner : MonoBehaviourPunCallbacks
     {
         Debug.Log("Join random room a esuat.");
 
-        // Random generated digits code + display
-        PhotonNetwork.CreateRoom("testroom2", new RoomOptions()
+        PhotonNetwork.CreateRoom(GenerateRoomCode(), new RoomOptions()
         {
             MaxPlayers = 4,
             IsVisible = true,

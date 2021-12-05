@@ -15,6 +15,21 @@ public class PhotonLobbyCreator : MonoBehaviourPunCallbacks
         Debug.LogFormat("Am setat numele {0} player-ului", PlayerNickname);
     }
 
+    private string GenerateRoomCode()
+    {
+        string chars = "0123456789";
+        var random = new System.Random();
+        string code = "";
+
+        for(int i=0; i<6; i++)
+        {
+            char ch = chars[random.Next(10)];
+            code += ch;
+        }
+
+        return code;
+    }
+
     public void CreateJengaRoom()
     {
         if(PlayerNickname.Length == 0)
@@ -24,9 +39,7 @@ public class PhotonLobbyCreator : MonoBehaviourPunCallbacks
 
         PhotonNetwork.LocalPlayer.NickName = PlayerNickname;
 
-
-        // Random generated digits code + display
-        PhotonNetwork.CreateRoom("testroom", new RoomOptions()
+        PhotonNetwork.CreateRoom(GenerateRoomCode(), new RoomOptions()
         {
             MaxPlayers = 4,
             IsVisible = true,
