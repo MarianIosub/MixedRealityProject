@@ -13,6 +13,8 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
     public GameObject Player3Object;
     public GameObject Player4Object;
 
+    public GameObject RoomCodeObject;
+
     private void ClearNicknames()
     {
         Player1Object.GetComponent<UnityEngine.UI.Text>().text = "-";
@@ -21,14 +23,21 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
         Player4Object.GetComponent<UnityEngine.UI.Text>().text = "-";
     }
 
+    private void DisplayRoomCode()
+    {
+        RoomCodeObject.GetComponent<UnityEngine.UI.Text>().text = "Room Code: " + PhotonNetwork.CurrentRoom?.Name;
+    }
+
     void Start()
     {
+        DisplayRoomCode();
         ClearNicknames();
     }
 
     public override void OnJoinedRoom()
     {
         ClearNicknames();
+        DisplayRoomCode();
         DisplayPlayersNicknames();
     }
 
