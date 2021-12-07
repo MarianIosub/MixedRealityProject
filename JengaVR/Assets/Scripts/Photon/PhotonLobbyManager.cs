@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 using UnityEngine;
 using Photon.Realtime;
@@ -39,6 +40,7 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
         ClearNicknames();
         DisplayRoomCode();
         DisplayPlayersNicknames();
+        CreatePlayer();
     }
 
     public override void OnPlayerEnteredRoom(Player player)
@@ -51,28 +53,36 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
     private void DisplayPlayersNicknames()
     {
         Debug.Log("Numele jucatorilor:");
-        foreach(Player player in PhotonNetwork.PlayerList)
+        foreach (Player player in PhotonNetwork.PlayerList)
         {
             Debug.Log(player.ToString());
 
-            if(Player1Object.GetComponent<UnityEngine.UI.Text>().text == "-")
+            if (Player1Object.GetComponent<UnityEngine.UI.Text>().text == "-")
             {
                 Player1Object.GetComponent<UnityEngine.UI.Text>().text = player.NickName;
             }
-            else if(Player2Object.GetComponent<UnityEngine.UI.Text>().text == "-")
+            else if (Player2Object.GetComponent<UnityEngine.UI.Text>().text == "-")
             {
                 Player2Object.GetComponent<UnityEngine.UI.Text>().text = player.NickName;
             }
-            else if(Player3Object.GetComponent<UnityEngine.UI.Text>().text == "-")
+            else if (Player3Object.GetComponent<UnityEngine.UI.Text>().text == "-")
             {
                 Player3Object.GetComponent<UnityEngine.UI.Text>().text = player.NickName;
             }
-            else if(Player4Object.GetComponent<UnityEngine.UI.Text>().text == "-")
+            else if (Player4Object.GetComponent<UnityEngine.UI.Text>().text == "-")
             {
                 Player4Object.GetComponent<UnityEngine.UI.Text>().text = player.NickName;
             }
-
         }
+    }
+
+    public void CreatePlayer()
+    {
+        PhotonNetwork.Instantiate(Path.Combine("Assets", "Photon", "PhotonUnityNetworking", "Resources", "RightHand"),
+            Vector3.zero, Quaternion.identity, 0);
+
+        PhotonNetwork.Instantiate(Path.Combine("Assets", "Photon", "PhotonUnityNetworking", "Resources", "LeftHand"),
+            Vector3.zero, Quaternion.identity, 0);
     }
 
     public override void OnPlayerLeftRoom(Player player)
