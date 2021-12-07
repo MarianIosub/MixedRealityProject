@@ -11,8 +11,8 @@ public class CreateMyPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var photonView = GetComponent<PhotonView>();
-        if (photonView.IsMine)
+        
+        if (myPhotonView.IsMine)
         {
             CreatePlayer();
         }
