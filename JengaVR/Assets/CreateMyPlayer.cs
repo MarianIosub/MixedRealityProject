@@ -20,10 +20,10 @@ public class CreateMyPlayer : MonoBehaviour
 
     public void CreatePlayer()
     {
-        PhotonNetwork.Instantiate(Path.Combine("Assets", "Photon", "PhotonUnityNetworking", "Resources", "RightHand"),
+        PhotonNetwork.Instantiate(Path.Combine("Assets", "RightHand"),
             Vector3.zero, Quaternion.identity, 0);
 
-        PhotonNetwork.Instantiate(Path.Combine("Assets", "Photon", "PhotonUnityNetworking", "Resources", "LeftHand"),
+        PhotonNetwork.Instantiate(Path.Combine("Assets", "LeftHand"),
             Vector3.zero, Quaternion.identity, 0);
     }
 
