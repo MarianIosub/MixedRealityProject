@@ -43,12 +43,12 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
         ClearNicknames();
         DisplayRoomCode();
         DisplayPlayersNicknames();
-        CreatePlayer();
+        // CreatePlayer();
     }
 
     private void CreatePlayer()
     {
-        PhotonNetwork.Instantiate(PlayerCharacter.name, new Vector3(0f, 0.5f, 0f), Quaternion.identity);
+        PhotonNetwork.Instantiate(PlayerCharacter.name, transform.position, transform.rotation);
     }
 
     public override void OnLeftRoom()

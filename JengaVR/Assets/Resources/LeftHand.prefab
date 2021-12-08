@@ -200,12 +200,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2487962020486202607}
   - component: {fileID: -1421543085483193554}
-  - component: {fileID: 2631711247215967971}
-  - component: {fileID: -6128580607748895856}
   - component: {fileID: 6148074566507034476}
   - component: {fileID: 2540486259462798209}
-  - component: {fileID: -9140346950295049097}
-  - component: {fileID: -1930667935588079109}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -249,41 +245,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 2631711247215967971}
-  - {fileID: -9140346950295049097}
+  - {fileID: 0}
+  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &2631711247215967971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3012016352409820757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
---- !u!114 &-6128580607748895856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3012016352409820757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a552853660f627149829c9aafeaacdb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentPath_vr: XR Rig/Camera Offset/LeftHand Controller
-  alternativePath: 
 --- !u!23 &6148074566507034476
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -340,35 +306,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMatBlack: {fileID: 2100000, guid: dabeafb2b0652e847af00a68a2df3d0a, type: 2}
   hoverMatBlue: {fileID: 2100000, guid: b10a48785d5fd3c4f8ec78c6c986f653, type: 2}
---- !u!114 &-9140346950295049097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3012016352409820757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
---- !u!114 &-1930667935588079109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3012016352409820757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0a9fafcd8647dc8ce5600274b88ed9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handPrefab: {fileID: 0}
 --- !u!1 &3114223981288141985
 GameObject:
   m_ObjectHideFlags: 0
