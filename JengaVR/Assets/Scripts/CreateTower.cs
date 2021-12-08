@@ -47,7 +47,7 @@ public class CreateTower : MonoBehaviour
     }
 
     [PunRPC]
-    public void UpdateTower(GameObject gameObject)
+    public void UpdateTower(GameObject tower)
     {
         for (int i = 0; i < 54; i++)
         {
