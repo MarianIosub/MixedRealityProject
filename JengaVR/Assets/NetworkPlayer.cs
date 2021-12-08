@@ -36,10 +36,7 @@ public class NetworkPlayer : MonoBehaviour
 
     void MapPosition(Transform target, Transform source)
     {
-        // InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 position);
-        // InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rotation);
-        // var rotation = InputTracking.GetLocalRotation(node);
-        // var position = InputTracking.GetLocalPosition(node);
+
         var rotation = source.rotation;
         var position = source.position;
         Debug.Log("Position " + position);
