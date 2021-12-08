@@ -53,7 +53,9 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 6087171739609718410}
+  - {fileID: 3979160780549933864}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -180,6 +182,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RightHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215345952788916910, guid: 6622b693cd1b0e844a541748d79d8872,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2275049924168754855, guid: 6622b693cd1b0e844a541748d79d8872,
         type: 3}
@@ -314,6 +321,11 @@ PrefabInstance:
     - target: {fileID: 2487962020486202607, guid: c8d3767d28b055c458ccb97dc0247a5d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2540486259462798209, guid: c8d3767d28b055c458ccb97dc0247a5d,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3012016352409820757, guid: c8d3767d28b055c458ccb97dc0247a5d,

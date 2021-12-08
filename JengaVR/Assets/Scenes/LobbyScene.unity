@@ -633,7 +633,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftHand
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1421543085483193554, guid: c8d3767d28b055c458ccb97dc0247a5d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c8d3767d28b055c458ccb97dc0247a5d, type: 3}
 --- !u!4 &609244155 stripped
 Transform:
@@ -1033,7 +1034,8 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8973002137268674914, guid: 6622b693cd1b0e844a541748d79d8872, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6622b693cd1b0e844a541748d79d8872, type: 3}
 --- !u!4 &1068343980 stripped
 Transform:
@@ -1841,7 +1843,6 @@ GameObject:
   - component: {fileID: 1732959153}
   - component: {fileID: 1732959152}
   - component: {fileID: 1732959151}
-  - component: {fileID: 1732959155}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -2302,20 +2303,6 @@ MonoBehaviour:
     m_Reference: {fileID: 7779212132400271959, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
---- !u!114 &1732959155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732959149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42c51603561497f4daeb728cc19e7e47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handPrefab: {fileID: 3012016352409820757, guid: c8d3767d28b055c458ccb97dc0247a5d,
-    type: 3}
 --- !u!1 &1751684644
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,7 +2385,6 @@ GameObject:
   - component: {fileID: 1796317220}
   - component: {fileID: 1796317219}
   - component: {fileID: 1796317218}
-  - component: {fileID: 1796317222}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -2859,20 +2845,6 @@ MonoBehaviour:
     m_Reference: {fileID: 875253871413052681, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
---- !u!114 &1796317222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796317216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42c51603561497f4daeb728cc19e7e47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handPrefab: {fileID: 1502312724727331869, guid: 6622b693cd1b0e844a541748d79d8872,
-    type: 3}
 --- !u!1 &1861933859
 GameObject:
   m_ObjectHideFlags: 0

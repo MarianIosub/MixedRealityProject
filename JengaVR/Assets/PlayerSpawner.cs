@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerSpawner : MonoBehaviourPunCallbacks
 {
-    public GameObject spawnedPlayer;
+    private GameObject spawnedPlayer;
 
     // Start is called before the first frame update
     public override void OnJoinedRoom()
