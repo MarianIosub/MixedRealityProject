@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 7364572864385105199}
   - component: {fileID: 2215345952788916910}
   - component: {fileID: -7520559845164647085}
-  - component: {fileID: -7102762525367724873}
+  - component: {fileID: 7182849406321349431}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -346,7 +346,7 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &-7102762525367724873
+--- !u!114 &7182849406321349431
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -355,13 +355,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1502312724727331869}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Script: {fileID: 11500000, guid: ec0a9fafcd8647dc8ce5600274b88ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 1
-  ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  handPrefab: {fileID: 0}
 --- !u!1 &1891391824563490440
 GameObject:
   m_ObjectHideFlags: 0

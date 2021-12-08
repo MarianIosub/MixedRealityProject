@@ -11,7 +11,7 @@ public class PhotonLobbyCreator : MonoBehaviourPunCallbacks
 
     public void SetPlayerNickname(string nickname)
     {
-        this.PlayerNickname = nickname.Trim();
+        this.PlayerNickname = nickname.Trim(' ');
         Debug.LogFormat("Am setat numele {0} player-ului", PlayerNickname);
     }
 
@@ -21,7 +21,7 @@ public class PhotonLobbyCreator : MonoBehaviourPunCallbacks
         var random = new System.Random();
         string code = "";
 
-        for(int i=0; i<6; i++)
+        for (int i = 0; i < 6; i++)
         {
             char ch = chars[random.Next(10)];
             code += ch;
@@ -32,7 +32,7 @@ public class PhotonLobbyCreator : MonoBehaviourPunCallbacks
 
     public void CreateJengaRoom()
     {
-        if(PlayerNickname.Length == 0)
+        if (PlayerNickname.Length == 0)
         {
             PlayerNickname = "NoName";
         }

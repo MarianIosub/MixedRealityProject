@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 6148074566507034476}
   - component: {fileID: 2540486259462798209}
   - component: {fileID: -9140346950295049097}
-  - component: {fileID: -8668938659934501704}
+  - component: {fileID: -1930667935588079109}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -250,6 +250,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2631711247215967971}
+  - {fileID: -9140346950295049097}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -355,7 +356,7 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &-8668938659934501704
+--- !u!114 &-1930667935588079109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -364,13 +365,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3012016352409820757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Script: {fileID: 11500000, guid: ec0a9fafcd8647dc8ce5600274b88ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 1
-  ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  handPrefab: {fileID: 0}
 --- !u!1 &3114223981288141985
 GameObject:
   m_ObjectHideFlags: 0

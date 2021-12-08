@@ -1,5 +1,6 @@
 using System.IO;
 using System.Linq;
+using Photon.Pun;
 using UnityEngine;
 
 public class CreateHand : MonoBehaviour
@@ -9,11 +10,13 @@ public class CreateHand : MonoBehaviour
 
     void Start()
     {
-        Instantiate(handPrefab, this.transform);
+        PhotonNetwork.Instantiate(handPrefab.name, Vector3.zero, Quaternion.identity, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
     }
+    
 }

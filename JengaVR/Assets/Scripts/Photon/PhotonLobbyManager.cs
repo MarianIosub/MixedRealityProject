@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -5,6 +6,7 @@ using System.Threading;
 using UnityEngine;
 using Photon.Realtime;
 using Photon.Pun;
+using Photon.Pun.Demo.PunBasics;
 using UnityEngine.SceneManagement;
 
 public class PhotonLobbyManager : MonoBehaviourPunCallbacks
@@ -15,6 +17,10 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
     public GameObject Player4Object;
 
     public GameObject RoomCodeObject;
+    public GameObject leftHand;
+    public GameObject righthand;
+    public GameObject leftHandController;
+    public GameObject righthandController;
 
     private void ClearNicknames()
     {
@@ -42,6 +48,23 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
         DisplayPlayersNicknames();
         CreatePlayer();
     }
+
+    private void CreatePlayer()
+    {
+        var lh = PhotonNetwork.Instantiate(leftHand.name, Vector3.zero, Quaternion.identity);
+        lh.transform.SetParent(leftHandController.transform, false);
+        var rh = PhotonNetwork.Instantiate(righthand.name, Vector3.zero, Quaternion.identity);
+        rh.transform.SetParent(righthandController.transform, false);
+    }
+
+    public override void OnLeftRoom()
+    {
+        ClearNicknames();
+        DisplayRoomCode();
+        DisplayPlayersNicknames();
+    }
+
+
 
     public override void OnPlayerEnteredRoom(Player player)
     {
@@ -76,15 +99,6 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
         }
     }
 
-    public void CreatePlayer()
-    {
-        PhotonNetwork.Instantiate(Path.Combine("Assets", "Photon", "PhotonUnityNetworking", "Resources", "RightHand"),
-            Vector3.zero, Quaternion.identity, 0);
-
-        PhotonNetwork.Instantiate(Path.Combine("Assets", "Photon", "PhotonUnityNetworking", "Resources", "LeftHand"),
-            Vector3.zero, Quaternion.identity, 0);
-    }
-
     public override void OnPlayerLeftRoom(Player player)
     {
         if (player.NickName != PhotonNetwork.LocalPlayer.NickName)
@@ -99,6 +113,14 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LeaveRoom();
         MoveToScene("ChooseLobbyScene");
+    }
+
+    public void ContinueToChooseTower()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.LoadLevel("PlayScene");
+        }
     }
 
     private void MoveToScene(string sceneName)

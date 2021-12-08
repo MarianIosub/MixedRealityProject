@@ -8,13 +8,13 @@ public class PhotonConnector : MonoBehaviourPunCallbacks
 {
     string gameVersion = "1";
 
-    void Awake()
+    public void Awake()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
         DontDestroyOnLoad(this.gameObject);
     }
 
-    void Start()
+    public void Start()
     {
         DontDestroyOnLoad(this.gameObject);
         Connect();
