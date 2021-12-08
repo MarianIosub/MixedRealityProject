@@ -11,22 +11,25 @@ public class CreateTower : MonoBehaviour
 
     void Start()
     {
-        var tower = Instantiate(towerPrefab, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
-
-        for (int i = 0; i < 54; i++)
+        if (PhotonNetwork.IsMasterClient)
         {
-            var settings = File.ReadLines("Assets/Settings/settings.txt");
-            switch (settings.ElementAt(1).Split("=")[1])
+            var tower = PhotonNetwork.Instantiate(towerPrefab.name, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
+
+            for (int i = 0; i < 54; i++)
             {
-                case "0":
-                    tower.GetChild(i).GetComponent<MeshRenderer>().material = oakMaterial;
-                    break;
-                case "1":
-                    tower.GetChild(i).GetComponent<MeshRenderer>().material = pineMaterial;
-                    break;
-                case "2":
-                    tower.GetChild(i).GetComponent<MeshRenderer>().material = mahagonyMaterial;
-                    break;
+                var settings = File.ReadLines("Assets/Settings/settings.txt");
+                switch (settings.ElementAt(1).Split("=")[1])
+                {
+                    case "0":
+                        tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = oakMaterial;
+                        break;
+                    case "1":
+                        tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = pineMaterial;
+                        break;
+                    case "2":
+                        tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = mahagonyMaterial;
+                        break;
+                }
             }
         }
     }
