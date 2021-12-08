@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit.UI;
 
 public class NetworkPlayer : MonoBehaviour
 {
@@ -23,18 +24,20 @@ public class NetworkPlayer : MonoBehaviour
         {
             leftHand.gameObject.SetActive(false);
             rightHand.gameObject.SetActive(false);
-            
+
             MapPosition(leftHand, XRNode.LeftHand);
             MapPosition(rightHand, XRNode.RightHand);
         }
-
-
     }
 
     void MapPosition(Transform target, XRNode node)
     {
         InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 position);
         InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rotation);
+        // var rotation = InputTracking.GetLocalRotation(node);
+        // var position = InputTracking.GetLocalPosition(node);
+        Debug.Log("Position " + position);
+        Debug.Log("Rotation " + rotation);
         target.position = position;
         target.rotation = rotation;
     }
