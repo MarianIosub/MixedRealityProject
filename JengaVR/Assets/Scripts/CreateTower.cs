@@ -11,7 +11,7 @@ public class CreateTower : MonoBehaviour
 
     void Start()
     {
-        var tower = PhotonNetwork.Instantiate(towerPrefab.name, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
+        var tower = Instantiate(towerPrefab, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
 
         for (int i = 0; i < 54; i++)
         {
@@ -19,13 +19,13 @@ public class CreateTower : MonoBehaviour
             switch (settings.ElementAt(1).Split("=")[1])
             {
                 case "0":
-                    tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = oakMaterial;
+                    tower.GetChild(i).GetComponent<MeshRenderer>().material = oakMaterial;
                     break;
                 case "1":
-                    tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = pineMaterial;
+                    tower.GetChild(i).GetComponent<MeshRenderer>().material = pineMaterial;
                     break;
                 case "2":
-                    tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = mahagonyMaterial;
+                    tower.GetChild(i).GetComponent<MeshRenderer>().material = mahagonyMaterial;
                     break;
             }
         }
