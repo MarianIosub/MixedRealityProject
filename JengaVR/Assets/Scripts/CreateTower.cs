@@ -11,10 +11,14 @@ public class CreateTower : MonoBehaviour
 
     void Start()
     {
+        GameObject tower = null;
         if (PhotonNetwork.IsMasterClient)
         {
-            var tower = PhotonNetwork.Instantiate(towerPrefab.name, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
+            tower = PhotonNetwork.Instantiate(towerPrefab.name, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
+        }
 
+        if (tower is not null)
+        {
             for (int i = 0; i < 54; i++)
             {
                 var settings = File.ReadLines("Assets/Settings/settings.txt");
