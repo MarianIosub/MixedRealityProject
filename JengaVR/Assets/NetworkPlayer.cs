@@ -17,6 +17,7 @@ public class NetworkPlayer : MonoBehaviour
     void Start()
     {
         pv = GetComponent<PhotonView>();
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
