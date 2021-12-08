@@ -46,7 +46,7 @@ public class PhotonLobbyCreator : MonoBehaviourPunCallbacks
             IsOpen = true
         });
 
-        MoveToScene("LobbyScene");
+        PhotonNetwork.LoadLevel("LobbyScene");
     }
 
     public void JoinJengaRoom()
@@ -58,7 +58,7 @@ public class PhotonLobbyCreator : MonoBehaviourPunCallbacks
 
         PhotonNetwork.LocalPlayer.NickName = PlayerNickname;
 
-        MoveToScene("JoinLobbyScene");
+        PhotonNetwork.LoadLevel("JoinLobbyScene");
     }
 
     public override void OnCreatedRoom()

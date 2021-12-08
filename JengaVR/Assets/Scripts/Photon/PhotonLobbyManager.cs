@@ -17,10 +17,7 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
     public GameObject Player4Object;
 
     public GameObject RoomCodeObject;
-    public GameObject leftHand;
-    public GameObject righthand;
-    public GameObject leftHandController;
-    public GameObject righthandController;
+    public GameObject PlayerCharacter;
 
     private void ClearNicknames()
     {
@@ -51,10 +48,7 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
 
     private void CreatePlayer()
     {
-        var lh = PhotonNetwork.Instantiate(leftHand.name, Vector3.zero, Quaternion.identity);
-        lh.transform.SetParent(leftHandController.transform, false);
-        var rh = PhotonNetwork.Instantiate(righthand.name, Vector3.zero, Quaternion.identity);
-        rh.transform.SetParent(righthandController.transform, false);
+        PhotonNetwork.Instantiate(PlayerCharacter.name, new Vector3(0f, 0.5f, 0f), Quaternion.identity);
     }
 
     public override void OnLeftRoom()
@@ -63,7 +57,6 @@ public class PhotonLobbyManager : MonoBehaviourPunCallbacks
         DisplayRoomCode();
         DisplayPlayersNicknames();
     }
-
 
 
     public override void OnPlayerEnteredRoom(Player player)
