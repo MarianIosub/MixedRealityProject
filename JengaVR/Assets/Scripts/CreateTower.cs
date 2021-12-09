@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using Photon.Pun;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CreateTower : MonoBehaviour
@@ -8,6 +9,17 @@ public class CreateTower : MonoBehaviour
     // Start is called before the first frame update
     public Transform towerPrefab;
     public Material oakMaterial, pineMaterial, mahagonyMaterial;
+
+    private Transform tower;
+    
+    /*
+    private void AddEventListenersOnTowerCubes(GameObject tower)
+    {
+        foreach (Transform child in tower.transform)
+        {
+            child.gameObject.AddComponent<TowerCubeEvent>();
+        }
+    }*/
 
     void Start()
     {
@@ -21,6 +33,8 @@ public class CreateTower : MonoBehaviour
             {
                 for (int i = 0; i < 54; i++)
                 {
+                    tower.transform.GetChild(i).GetComponent<Rigidbody>().mass = 5;
+
                     var settings = File.ReadLines("Assets/Settings/settings.txt");
                     switch (settings.ElementAt(1).Split("=")[1])
                     {
@@ -35,6 +49,9 @@ public class CreateTower : MonoBehaviour
                             break;
                     }
                 }
+
+                //AddEventListenersOnTowerCubes(tower);
+                tower.AddComponent<TowerCubeEvent>();
             }
 
             this.GetComponent<PhotonView>().RPC("UpdateTower", RpcTarget.Others, tower);
