@@ -27,12 +27,14 @@ public class CreateTower : MonoBehaviour
 
         if (tower is not null)
         {
+            var settings = File.ReadLines("Assets/Settings/settings.txt");
+            var material = settings.ElementAt(1).Split("=")[1];
+            Debug.Log("Material: " + material);
             for (int i = 0; i < 54; i++)
             {
                 tower.transform.GetChild(i).GetComponent<Rigidbody>().mass = 5;
 
-                var settings = File.ReadLines("Assets/Settings/settings.txt");
-                switch (settings.ElementAt(1).Split("=")[1])
+                switch (material)
                 {
                     case "0":
                         tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = oakMaterial;

@@ -40,8 +40,8 @@ public class NetworkPlayer : MonoBehaviour
 
         var rotation = source.rotation;
         var position = source.position;
-        Debug.Log("Position " + position);
-        Debug.Log("Rotation " + rotation);
+        // Debug.Log("Position " + position);
+        // Debug.Log("Rotation " + rotation);
         target.position = position;
         target.rotation = rotation;
     }
