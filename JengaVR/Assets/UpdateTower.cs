@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class UpdateTower : MonoBehaviour
+public class UpdateTower : MonoBehaviourPun
 {
     // Start is called before the first frame update
     void Start()
@@ -14,7 +14,7 @@ public class UpdateTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<PhotonView>().RPC("UpdateTowerRpc", RpcTarget.Others, this);
+       photonView.RPC("UpdateTowerRpc", RpcTarget.Others, this);
     }
 
     [PunRPC]
