@@ -7,10 +7,10 @@ using UnityEngine;
 public class CreateTower : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform towerPrefab;
+    public GameObject towerPrefab;
     public Material oakMaterial, pineMaterial, mahagonyMaterial;
 
-    private Transform tower;
+    private GameObject tower;
 
     /*
     private void AddEventListenersOnTowerCubes(GameObject tower)
@@ -23,11 +23,7 @@ public class CreateTower : MonoBehaviour
 
     void Start()
     {
-        GameObject tower = null;
-        if (PhotonNetwork.IsMasterClient)
-        {
-            tower = PhotonNetwork.Instantiate(towerPrefab.name, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
-        }
+        tower = Instantiate(towerPrefab, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
 
         if (tower is not null)
         {
@@ -51,11 +47,8 @@ public class CreateTower : MonoBehaviour
             }
         }
 
-        if (PhotonNetwork.IsMasterClient)
-        {
-            //AddEventListenersOnTowerCubes(tower);
-            tower.AddComponent<TowerCubeEvent>();
-        }
+        //AddEventListenersOnTowerCubes(tower);
+        tower.AddComponent<TowerCubeEvent>();
     }
 
     // this.GetComponent<PhotonView>().RPC("UpdateTower", RpcTarget.Others, tower);
@@ -64,26 +57,19 @@ public class CreateTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetComponent<PhotonView>().RPC("UpdateTower", RpcTarget.Others, tower);
     }
 
     [PunRPC]
-    public void UpdateTower(GameObject tower)
+    public void UpdateTower(GameObject otherTower)
     {
+        Debug.Log("Called RPC for update");
+        tower.transform.position = otherTower.transform.position;
+        tower.transform.rotation = otherTower.transform.rotation;
         for (int i = 0; i < 54; i++)
         {
-            var settings = File.ReadLines("Assets/Settings/settings.txt");
-            switch (settings.ElementAt(1).Split("=")[1])
-            {
-                case "0":
-                    tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = oakMaterial;
-                    break;
-                case "1":
-                    tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = pineMaterial;
-                    break;
-                case "2":
-                    tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = mahagonyMaterial;
-                    break;
-            }
+            tower.transform.GetChild(i).transform.position = otherTower.transform.GetChild(i).transform.position;
+            tower.transform.GetChild(i).transform.rotation = otherTower.transform.GetChild(i).transform.rotation;
         }
     }
 }
