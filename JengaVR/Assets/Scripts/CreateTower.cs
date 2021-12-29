@@ -57,19 +57,5 @@ public class CreateTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<PhotonView>().RPC("UpdateTower", RpcTarget.Others, tower);
-    }
-
-    [PunRPC]
-    public void UpdateTower(GameObject otherTower)
-    {
-        Debug.Log("Called RPC for update");
-        tower.transform.position = otherTower.transform.position;
-        tower.transform.rotation = otherTower.transform.rotation;
-        for (int i = 0; i < 54; i++)
-        {
-            tower.transform.GetChild(i).transform.position = otherTower.transform.GetChild(i).transform.position;
-            tower.transform.GetChild(i).transform.rotation = otherTower.transform.GetChild(i).transform.rotation;
-        }
     }
 }
