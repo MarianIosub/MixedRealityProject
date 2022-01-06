@@ -105,6 +105,9 @@ public class TowerCubeEvent : MonoBehaviour
                 positionQueue.Enqueue(position);
 
                 UpdateCubesPositions();
+
+                var scoresComponent = FindObjectOfType<PlayerScores>();
+                scoresComponent.IncrementPlayerScore();
             }
         }
     }

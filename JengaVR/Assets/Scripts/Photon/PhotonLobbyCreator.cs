@@ -99,4 +99,9 @@ public class PhotonLobbyCreator : MonoBehaviourPunCallbacks
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void DisconnectFromRoom()
+    {
+        PhotonNetwork.LeaveRoom();
+    }
 }
