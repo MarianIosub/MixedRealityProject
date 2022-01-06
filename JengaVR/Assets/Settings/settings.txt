@@ -2,3 +2,4 @@ pieceTexture=1
 pieceSelected=1
 handColor=0
 music=0
+tower=0
