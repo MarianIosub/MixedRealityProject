@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13630302, g: 0.13304761, b: 0.13535886, a: 1}
+  m_IndirectSpecularColor: {r: 0.13630304, g: 0.13304764, b: 0.13535888, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -779,6 +779,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c51603561497f4daeb728cc19e7e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverMatBlack: {fileID: 0}
+  hoverMatBlue: {fileID: 0}
   handPrefab: {fileID: 3012016352409820757, guid: c8d3767d28b055c458ccb97dc0247a5d,
     type: 3}
 --- !u!4 &96896215 stripped
@@ -2956,6 +2958,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c51603561497f4daeb728cc19e7e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverMatBlack: {fileID: 0}
+  hoverMatBlue: {fileID: 0}
   handPrefab: {fileID: 1502312724727331869, guid: 6622b693cd1b0e844a541748d79d8872,
     type: 3}
 --- !u!1001 &1112060757
@@ -3332,6 +3336,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 79068303}
     m_Modifications:
+    - target: {fileID: -2178230857976670878, guid: c8d3767d28b055c458ccb97dc0247a5d,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2487962020486202607, guid: c8d3767d28b055c458ccb97dc0247a5d,
         type: 3}
       propertyPath: m_RootOrder
@@ -4230,9 +4239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreCanvas: {fileID: 786497108}
   PlayerName: {fileID: 1220505290}
-  numberOfPlayers: 2
-  canvasHeight: 200
-  spacing: 15
+  initialPositionY: 284
 --- !u!1001 &1712217750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4958,6 +4965,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerPrefab: {fileID: 4731813308419917616, guid: 2b10695eb4c9d0647ab7c5a757ca59d9,
     type: 3}
+  spiralPrefab: {fileID: 4731813308419917616, guid: 733091de2b368c34d88f97d3d1b7458c,
+    type: 3}
   oakMaterial: {fileID: 2100000, guid: 07143a73114011742ada326717c8f1a1, type: 2}
   pineMaterial: {fileID: 2100000, guid: b351d7fa38a97f84abef8ebf114e7b05, type: 2}
   mahagonyMaterial: {fileID: 2100000, guid: 310f4788d80d20e4fb5f7764af29ce8d, type: 2}
@@ -4968,6 +4977,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1109210326}
     m_Modifications:
+    - target: {fileID: -4198100912307042753, guid: 6622b693cd1b0e844a541748d79d8872,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1502312724727331869, guid: 6622b693cd1b0e844a541748d79d8872,
         type: 3}
       propertyPath: m_Name

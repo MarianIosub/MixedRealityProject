@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,24 +19,26 @@ public class TowerSelector : MonoBehaviour
     public void changeSelectedTower()
     {
         selectedTower = (selectedTower + 1) % 2;
-
-        if(selectedTower == 0)
+        var settings = File.ReadLines("Assets/Settings/settings.txt").ToList();
+        if (selectedTower == 0)
         {
             towerObject.GetComponent<Image>().sprite = normalTowerSprite;
+            settings[4] = "tower=0";
         }
         else
         {
             towerObject.GetComponent<Image>().sprite = spiralTowerSprite;
+            settings[4] = "tower=1";
         }
+
+        File.WriteAllLinesAsync("Assets/Settings/settings.txt", settings);
     }
 
     void Start()
     {
-
     }
 
     void Update()
     {
-
     }
-} 
+}
