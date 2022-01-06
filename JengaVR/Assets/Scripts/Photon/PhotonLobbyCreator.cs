@@ -49,6 +49,25 @@ public class PhotonLobbyCreator : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel("LobbyScene");
     }
 
+    public void CreateSinglePlayerJengaRoom()
+    {
+        //PhotonNetwork.LeaveRoom();
+
+        if (PlayerNickname.Length == 0)
+        {
+            PlayerNickname = "NoName";
+        }
+
+        PhotonNetwork.LocalPlayer.NickName = PlayerNickname;
+
+        PhotonNetwork.CreateRoom(GenerateRoomCode(), new RoomOptions()
+        {
+            MaxPlayers = 1,
+            IsVisible = true,
+            IsOpen = true
+        });
+    }
+
     public void JoinJengaRoom()
     {
         if (PlayerNickname.Length == 0)

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -786,6 +786,18 @@ MonoBehaviour:
           m_StringArgument: PlayScene
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1391837967}
+        m_TargetAssemblyTypeName: PhotonLobbyCreator, Assembly-CSharp
+        m_MethodName: CreateSinglePlayerJengaRoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &399714540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,6 +927,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 698015177}
     m_Modifications:
+    - target: {fileID: -4198100912307042753, guid: 6622b693cd1b0e844a541748d79d8872,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1502312724727331869, guid: 6622b693cd1b0e844a541748d79d8872,
         type: 3}
       propertyPath: m_Name
@@ -1282,6 +1299,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 182057230}
     m_Modifications:
+    - target: {fileID: -2178230857976670878, guid: c8d3767d28b055c458ccb97dc0247a5d,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1421543085483193554, guid: c8d3767d28b055c458ccb97dc0247a5d,
         type: 3}
       propertyPath: sceneViewId
@@ -2420,6 +2442,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1391837964}
   - component: {fileID: 1391837965}
+  - component: {fileID: 1391837966}
+  - component: {fileID: 1391837967}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -2452,6 +2476,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3614e44e079874f4484c80d269e4c148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1391837966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391837963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbb9cf9b9ebc774499a08c21e86a29c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1391837967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391837963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c022610195219694483f6e3f155eac02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1604731978
