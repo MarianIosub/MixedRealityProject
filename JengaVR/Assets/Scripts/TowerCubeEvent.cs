@@ -11,6 +11,10 @@ public class TowerCubeEvent : MonoBehaviour
     Queue<Quaternion> rotationQueue;
 
     float cubeHeight = 0.029120269f;
+    float yPositionOfLowestCube = 9999999f;
+
+    bool gameEnded = false;
+    GameObject endGameObject;
 
     void MemorizeCubesPositions()
     {
@@ -77,8 +81,43 @@ public class TowerCubeEvent : MonoBehaviour
         }
     }
 
+    void MemorizeYOfLowestCubeInTower()
+    {
+        foreach (Transform child in this.gameObject.transform)
+        {
+            var y = child.position.y;
+            if(y < yPositionOfLowestCube)
+            {
+                yPositionOfLowestCube = y;
+            }
+        }
+    }
+
+    void EndGameIfTowerCrashed()
+    {
+        int numberOfCubesOnLowestY = 0;
+        foreach (Transform child in this.gameObject.transform)
+        {
+            if(child.position.y <= yPositionOfLowestCube)
+            {
+                numberOfCubesOnLowestY++;
+            }
+        }
+
+        if(numberOfCubesOnLowestY > 3)
+        {
+            Debug.LogWarning("Game ended!");
+            gameEnded = true;
+            endGameObject.SetActive(true);
+        }
+    }
+
     void Start()
     {
+        endGameObject = GameObject.Find("EndGameCanvas");
+        endGameObject.SetActive(false);
+
+        MemorizeYOfLowestCubeInTower();
         MemorizeCubesPositions();
 
         InitializePositionQueue();
@@ -87,28 +126,33 @@ public class TowerCubeEvent : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyUp("g"))
+        if(gameEnded == false)
         {
-            GameObject modifiedChild = GetChildWhosePositionModified();
-
-            if(modifiedChild != null)
+            if (Input.GetKeyUp("g"))
             {
-                Quaternion rotation = rotationQueue.Dequeue();
-                Vector3 position = positionQueue.Dequeue();
+                GameObject modifiedChild = GetChildWhosePositionModified();
 
-                modifiedChild.transform.rotation = rotation;
-                modifiedChild.transform.position = position;
+                if (modifiedChild != null)
+                {
+                    Quaternion rotation = rotationQueue.Dequeue();
+                    Vector3 position = positionQueue.Dequeue();
 
-                rotationQueue.Enqueue(rotation);
+                    modifiedChild.transform.rotation = rotation;
+                    modifiedChild.transform.position = position;
 
-                position.y = position.y + cubeHeight;
-                positionQueue.Enqueue(position);
+                    rotationQueue.Enqueue(rotation);
 
-                UpdateCubesPositions();
+                    position.y = position.y + cubeHeight;
+                    positionQueue.Enqueue(position);
 
-                var scoresComponent = FindObjectOfType<PlayerScores>();
-                scoresComponent.IncrementPlayerScore();
+                    UpdateCubesPositions();
+
+                    var scoresComponent = FindObjectOfType<PlayerScores>();
+                    scoresComponent.IncrementPlayerScore();
+                }
             }
+
+            EndGameIfTowerCrashed();
         }
     }
 }
