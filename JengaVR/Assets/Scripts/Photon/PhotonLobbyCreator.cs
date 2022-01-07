@@ -55,7 +55,7 @@ public class PhotonLobbyCreator : MonoBehaviourPunCallbacks
 
         if (PlayerNickname.Length == 0)
         {
-            PlayerNickname = "NoName";
+            PlayerNickname = "Player";
         }
 
         PhotonNetwork.LocalPlayer.NickName = PlayerNickname;
