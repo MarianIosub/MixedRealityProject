@@ -6,8 +6,8 @@
 
 [JengaVR Moodboard](https://drive.google.com/file/d/1doeUO20POCWy-IwCOd3lRoevgrOo5Q7S/view?usp=sharing)
 
-![C4 level 1 diagram](C4_Lv1.svg)
+![C4 level 1 diagram](Presentation/C4_Lv1.svg)
 
-![C4 level 2 diagram](C4_Lv2.svg)
+![C4 level 2 diagram](Presentation/C4_Lv2.svg)
 
-![Use Case diagram](Use_case.svg)
+![Use Case diagram](Presentation/Use_case.svg)
