@@ -30,15 +30,17 @@ public class CreateTower : MonoBehaviour
             if (towerType == "1")
             {
                 tower = PhotonNetwork.Instantiate(spiralPrefab.name, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
+                tower.GetComponent<PhotonRigidbodyView>().enabled = true;
             }
             else
             {
                 tower = PhotonNetwork.Instantiate(towerPrefab.name, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
+                tower.GetComponent<PhotonRigidbodyView>().enabled = true;
             }
-
+            
             if (tower is not null)
             {
-                for (int i = 0; i < 54; i++)
+                for (var i = 0; i < 54; i++)
                 {
                     tower.transform.GetChild(i).GetComponent<Rigidbody>().mass = 5;
                     switch (singleSetting)
@@ -67,24 +69,24 @@ public class CreateTower : MonoBehaviour
     {
     }
 
-    [PunRPC]
-    public void UpdateTower(GameObject tower)
-    {
-        for (int i = 0; i < 54; i++)
-        {
-            var settings = File.ReadLines("Assets/Settings/settings.txt");
-            switch (settings.ElementAt(1).Split("=")[1])
-            {
-                case "0":
-                    tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = oakMaterial;
-                    break;
-                case "1":
-                    tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = pineMaterial;
-                    break;
-                case "2":
-                    tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = mahagonyMaterial;
-                    break;
-            }
-        }
-    }
+    // [PunRPC]
+    // public void UpdateTower(GameObject tower)
+    // {
+    //     for (int i = 0; i < 54; i++)
+    //     {
+    //         var settings = File.ReadLines("Assets/Settings/settings.txt");
+    //         switch (settings.ElementAt(1).Split("=")[1])
+    //         {
+    //             case "0":
+    //                 tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = oakMaterial;
+    //                 break;
+    //             case "1":
+    //                 tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = pineMaterial;
+    //                 break;
+    //             case "2":
+    //                 tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = mahagonyMaterial;
+    //                 break;
+    //         }
+    //     }
+    // }
 }
