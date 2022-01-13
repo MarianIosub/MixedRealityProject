@@ -36,25 +36,24 @@ public class CreateTower : MonoBehaviour
                 tower = PhotonNetwork.Instantiate(towerPrefab.name, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
             }
 
-            if (tower is not null)
+            tower.GetComponent<PhotonRigidbodyView>().enabled = true;
+            for (int i = 0; i < 54; i++)
             {
-                for (int i = 0; i < 54; i++)
+                // tower.transform.GetChild(i).GetComponent<Rigidbody>().mass = 5;
+                switch (singleSetting)
                 {
-                    tower.transform.GetChild(i).GetComponent<Rigidbody>().mass = 5;
-                    switch (singleSetting)
-                    {
-                        case "0":
-                            tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = oakMaterial;
-                            break;
-                        case "1":
-                            tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = pineMaterial;
-                            break;
-                        case "2":
-                            tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = mahagonyMaterial;
-                            break;
-                    }
+                    case "0":
+                        tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = oakMaterial;
+                        break;
+                    case "1":
+                        tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = pineMaterial;
+                        break;
+                    case "2":
+                        tower.transform.GetChild(i).GetComponent<MeshRenderer>().material = mahagonyMaterial;
+                        break;
                 }
             }
+
 
             //AddEventListenersOnTowerCubes(tower);
             tower.AddComponent<TowerCubeEvent>();
