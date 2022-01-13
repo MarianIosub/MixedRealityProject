@@ -30,12 +30,12 @@ public class CreateTower : MonoBehaviour
             if (towerType == "1")
             {
                 tower = PhotonNetwork.Instantiate(spiralPrefab.name, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
-                tower.GetComponent<PhotonRigidbodyView>().enabled = true;
+                // tower.GetComponent<PhotonRigidbodyView>().enabled = true;
             }
             else
             {
                 tower = PhotonNetwork.Instantiate(towerPrefab.name, new Vector3(0, 0.49f, -0.2f), Quaternion.identity);
-                tower.GetComponent<PhotonRigidbodyView>().enabled = true;
+                // tower.GetComponent<PhotonRigidbodyView>().enabled = true;
             }
             
             if (tower is not null)
