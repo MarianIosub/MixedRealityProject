@@ -36,9 +36,6 @@ public class TowerSelector : MonoBehaviour
 
     void Start()
     {
-        var settings = File.ReadLines("Assets/Settings/settings.txt").ToList();
-        settings[4] = "tower=0";
-        File.WriteAllLinesAsync("Assets/Settings/settings.txt", settings);
     }
 
     void Update()
